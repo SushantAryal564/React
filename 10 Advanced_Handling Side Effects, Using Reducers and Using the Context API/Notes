@@ -1,0 +1,10 @@
+side effect :
+everthing else happing in our page like http request,timers and storing to local storages are managed by side effect.
+
+useReducer:
+useReducre is another react hook that helps with state management with more capabilities and useful for more complex state.
+
+const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn);
+dispatchFn => It dispatch an action which will be used by reducerFn
+
+useReducer vs useState
