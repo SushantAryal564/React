@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialAuthState = {
   isAuthenticated: false,
 };
-
 const authSlice = createSlice({
   name: "authentication",
   initialState: initialAuthState,
@@ -16,4 +15,4 @@ const authSlice = createSlice({
   },
 });
 export default authSlice.reducer;
-export const authActions = authSlice.actions;
+export const authAction = authSlice.actions;

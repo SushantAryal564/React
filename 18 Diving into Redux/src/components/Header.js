@@ -1,16 +1,17 @@
-import classes from './Header.module.css';
-  import { useSelector, useDispatch} from "react-redux";
-  import { authActions } from '../store/auth';
+import classes from "./Header.module.css";
+import { authAction } from "../store/auth";
+import { useSelector, useDispatch } from "react-redux";
+
 const Header = () => {
-  const isAuth = useSelector(state => state.auth.isAuthenticated);
   const dispatch = useDispatch();
-  const logoutHandler = ()=>{
-    dispatch(authActions.logout( ));
-  }
+  const authentication = useSelector((state) => state.auth.isAuthenticated);
+  const logoutHandler = () => {
+    dispatch(authAction.logout());
+  };
   return (
-    <header className={classes.header}>
-      <h1>Redux Auth</h1>
-      {isAuth && (
+    authentication && (
+      <header className={classes.header}>
+        <h1>Redux Auth</h1>
         <nav>
           <ul>
             <li>
@@ -24,8 +25,8 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      )}
-    </header>
+      </header>
+    )
   );
 };
 
