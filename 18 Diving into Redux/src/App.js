@@ -1,13 +1,13 @@
-import { Fragment } from "react";
-import Counter from "./components/Counter";
-import Header from "./components/Header";
-import Auth from "./components/Auth";
+import Cart from './components/Cart/Cart';
+import Layout from './components/Layout/Layout';
+import Products from './components/Shop/Products';
+
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <Auth />
-    </Fragment>
+    <Layout>
+      <Cart />
+      <Products />
+    </Layout>
   );
 }
 
