@@ -7,24 +7,40 @@ const UseInputBase = (props) => {
   const valueIsValid = props(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
-  const valueInputHandler = (event) => {
+  const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
   };
-  const BlurHandler = (event) => {
+  const inputBlureHandler = (event) => {
     setIsTouched(true);
-  };
-
-  const reset = () => {
-    setEnteredValue("");
-    setIsTouched("");
   };
   return {
     value: enteredValue,
-    isValid: valueIsValid,
+    valueIsValid,
     hasError,
-    valueInputHandler,
-    BlurHandler,
-    reset,
+    valueChangeHandler,
+    inputBlureHandler,
   };
+  // const [enteredValue, setEnteredValue] = useState("");
+  // const [isTouched, setIsTouched] = useState(false);
+  // const valueIsValid = props(enteredValue);
+  // const hasError = !valueIsValid && isTouched;
+  // const valueInputHandler = (event) => {
+  //   setEnteredValue(event.target.value);
+  // };
+  // const BlurHandler = (event) => {
+  //   setIsTouched(true);
+  // };
+  // const reset = () => {
+  //   setEnteredValue("");
+  //   setIsTouched("");
+  // };
+  // return {
+  //   value: enteredValue,
+  //   isValid: valueIsValid,
+  //   hasError,
+  //   valueInputHandler,
+  //   BlurHandler,
+  //   reset,
+  // };
 };
 export default UseInputBase;
